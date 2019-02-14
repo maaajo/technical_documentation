@@ -1,0 +1,39 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    height: 1000px;
+    display: flex;
+}
+
+#navbar {
+    width: 20%;
+    height: 100%;
+    border-right: 2px solid rgb(197, 197, 197);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#main-doc {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.navigation-header {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
