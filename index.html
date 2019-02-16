@@ -98,6 +98,111 @@ greetMe("World");</code>
                     <p class="section-paragraph">Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!</p>
                 </div>
             </section>
+            <section class="main-section" id="variables">
+                <header class="section-header">Variables</header>
+                <div class="section-content">
+                    <p class="section-paragraph">You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
+                    <p class="section-paragraph">A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
+                    <p class="section-paragraph">You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number_hits, temp99, and _name.</p>
+                </div>
+            </section>
+            <section class="main-section" id="declaring_variables">
+                <header class="section-header">Declaring Variables</header>
+                <div class="section-content">
+                    <p class="section-paragraph">You can declare a variable in three ways:</p>
+                    <ul>
+                        <li class="section-list">With the keyword var. For example</li>
+                        <div class="code-wrapper">
+                            <code>var x = 42</code>
+                        </div>
+                        <p class="section-paragraph">This syntax can be used to declare both local and global variables</p>
+                        <li class="section-list">By simply assigning it a value. For example</li>
+                        <div class="code-wrapper">
+                            <code>x = 42</code>
+                        </div>
+                        <p class="section-paragraph">This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant</p>
+                        <li class="section-list">With the keyword let. For example</li>
+                        <div class="code-wrapper">
+                            <code>let y = 13</code>
+                        </div>
+                        <p class="section-paragraph">This syntax can be used to declare a block scope local variable. See Variable scope below</p>
+                    </ul>
+                </div>
+            </section>
+            <section class="main-section" id="variable_scope">
+                <header class="section-header">Variable scope</header>
+                <div class="section-content">
+                    <p class="section-paragraph">When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.</p>
+                    <p class="section-paragraph">JavaScript before ECMAScript 2015 does not have block statement scope; rather, a variable declared within a block is local to the function (or global scope) that the block resides within. For example the following code will log 5, because the scope of x is the function (or global context) within which x is declared, not the block, which in this case is an if statement.</p>
+                    <div class="code-wrapper">
+                        <code>if (true) {
+    var x = 5;
+}
+console.log(x);  // 5</code>
+                    </div>
+                    <p class="section-paragraph">This behavior changes, when using the let declaration introduced in ECMAScript 2015</p>
+                    <div class="code-wrapper">
+                            <code>if (true) {
+    let y = 5;
+}
+console.log(y);
+// ReferenceError: y is not defined</code>
+                </div>
+            </section>
+            <section class="main-section" id="global_variables">
+                <header class="section-header">Global Variables</header>
+                <div class="section-content">
+                    <p class="section-paragraph">Global variables are in fact properties of the global object. In web pages the global object is window, so you can set and access global variables using the window.variable syntax.</p>
+                    <p class="section-paragraph">Consequently, you can access global variables declared in one window or frame from another window or frame by specifying the window or frame name. For example, if a variable called phoneNumber is declared in a document, you can refer to this variable from an iframe as parent.phoneNumber.</p>
+                </div>
+            </section>
+            <section class="main-section" id="constants">
+                <header class="section-header">Constants</header>
+                <div class="section-content">
+                    <p class="section-paragraph">You can create a read-only, named constant with the const keyword. The syntax of a constant identifier is the same as for a variable identifier: it must start with a letter, underscore or dollar sign and can contain alphabetic, numeric, or underscore characters.</p>
+                    <div class="code-wrapper">
+                        <code>const PI = 3.14;</code>
+                    </div>
+                    <p class="section-paragraph">A constant cannot change value through assignment or be re-declared while the script is running. It has to be initialized to a value.</p>
+                    <p class="section-paragraph">The scope rules for constants are the same as those for let block scope variables. If the const keyword is omitted, the identifier is assumed to represent a variable.</p>
+                    <p class="section-paragraph">You cannot declare a constant with the same name as a function or variable in the same scope. For example:</p>
+                    <div class="code-wrapper">
+                        <code>// THIS WILL CAUSE AN ERROR
+function f() {};
+const f = 5;
+// THIS WILL CAUSE AN ERROR ALSO
+function f() {
+    const g = 5;
+    var g;
+    //statements
+}</code>
+                    </div>
+                    <p class="section-paragraph">However, object attributes are not protected, so the following statement is executed without problems.</p>
+                    <div class="code-wrapper">
+                        <code>const MY_OBJECT = {"key": "value"};
+MY_OBJECT.key = "otherValue"</code>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section" id="data_types">
+                <header class="section-header">Data types</header>
+                <div class="section-content">
+                    <p class="section-paragraph">The latest ECMAScript standard defines seven data types:</p>
+                    <ul>
+                        <li class="section-list">Six data types that are primitives:</li>
+                        <ul>
+                            <li class="section-list">Boolean. true and false</li>
+                            <li class="section-list">null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+                            <li class="section-list">undefined. A top-level property whose value is undefined.</li>
+                            <li class="section-list">Number. 42 or 3.14159.</li>
+                            <li class="section-list">String. "Howdy"</li>
+                            <li class="section-list">Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+                        </ul>
+                        <li class="section-list">and Object</li>
+                    </ul>
+                    <p class="section-paragraph no-top-margin">Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.</p>
+                </div>
+            </section>
         </main>
     </div>
 </body>
