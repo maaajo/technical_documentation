@@ -10,7 +10,7 @@
 <body>
     <div class="page-wrapper">
         <nav id="navbar">
-            <header class="navigation-header">JS Documentation</header>
+            <header class="navigation-header"><a href="index.html">JS Documentation</a></header>
             <div class="nav-content first-section">
                 <a href="#introduction" class="nav-link">Introduction</a>
             </div>
@@ -18,7 +18,7 @@
                 <a href="#what_you_should_already_know" class="nav-link">What you should already know</a>
             </div>
             <div class="nav-content">
-                <a href="#" class="nav-link">Javascript and Java</a>
+                <a href="#javascript_and_java" class="nav-link">JavaScript and Java</a>
             </div>
             <div class="nav-content">
                 <a href="#" class="nav-link">Hello world</a>
@@ -75,6 +75,27 @@
                         <li class="section-list">Good working knowledge of HyperText Markup Language (HTML).</li>
                         <li class="section-list">Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.</li>
                     </ul>
+                </div>
+            </section>
+            <section class="main-section" id="javascript_and_java">
+                <header class="section-header">JavaScript and Java</header>
+                <div class="section-content">
+                    <p class="section-paragraph">JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
+                    <p class="section-paragraph">In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
+                    <p class="section-paragraph">JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+                </div>
+            </section>
+            <section class="main-section" id="hello_world">
+                <header class="section-header">Hello World</header>
+                <div class="section-content">
+                    <p class="section-paragraph">To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code</p>
+                    <div class="code-wrapper">
+                        <code>function greetMe(yourName) {
+        alert("Hello " + yourName);
+    }
+greetMe("World");</code>
+                    </div>
+                    <p class="section-paragraph">Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!</p>
                 </div>
             </section>
         </main>
